@@ -1,4 +1,6 @@
 Quadrado 4x4
 
 Para poder obter os possiveis resultados do quadrado mágico podemos iniciar realizando uma validação de todas possiveis combinações de quatro numeros sem repetição de 1 a 16 e que a soma dos quatro números seja 34.
-Obtendo 
+Obtendo as possiveis combinações podemos identificar quais seriam as possibilidades de linhas, colunas ou diagonais. Apartir dessa lista de conjuntos de 4 números podemos testar todas combinações possiveis de 4 conjuntos de 4 numeros com todos numeros distintos (sem repetição). Dessa forma podemos considerar que cada conjunto de 4 representaria uma linha faltando apenas descobrir a ordem dos numeros dentro de cada linha.
+Após obter as possiveis linhas e combinação das mesmas. Podemos testar todas as combinações de ordens das linhas e verificar se seria possivel ajustando os numeros nas linhas obter um quadrado mágico.
+Para verificar isso tendo como base uma sequencia de linhas com 4 numeros, precisamos identificar as possiveis colunas que podem ser feitas rearranjando os numeros dentro de suas linhas e identificar quais cenários seria possivel que todas as 4 colunas e as 2 diagonáis tenham soma de 34. Feita essa verificação seria possivel obter todas as disposições dos quadrados mágicos.
