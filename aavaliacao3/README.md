@@ -1,0 +1,4 @@
+### Comparação
+Ambos os métodos descritos tanto por mim como no detalhamento fornecido pelo professor, tem comportamentos similares. Obtendo todas as combinações de 4 números com soma igual a 34. Sendo assim ambas se comportariam iguais até o  Passo 2.
+No passo 3 ambas se comportam similarmente, iterando os casos para obter as possiveis combinações de 4 conjuntos de 4 números que utilizem os 16 números.
+No passo 4 o método do professor utiliza a iteração de todos os possiveis posicionamentos dos 16 números dentro de suas colunas. No método descrito por mim a obtenção das combinações já seria feita em conjunto com a definição de se aquele elemento era um quadrado mágico ou não.
