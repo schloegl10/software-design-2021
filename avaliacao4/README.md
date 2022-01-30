@@ -28,8 +28,7 @@ Na tela de criação de conta eles poderam fornecer seus emails, senha, nome, cr
 Após realizar o login haverá uma listagem de chats iniciados, ao final da listagem haverá um botão para criação de novos chats
 Durante a criação de novos chats o usuário será apresentado com a seleção de filtros, podendo preencher o filtro de especialidade, endereço, nome do estabelecimento ou nome do médico. 
 Após aplicar filtros definidos, será listado todos médicos que se incluem nele. Apartir dessa lista será possivel criar um novo chat com o respectivo médico
-Dentro dos chats será listado as mensagens enviadas, mensagens de texto ficarão disponiveis diretamente e arquivos e fotos enviadas serão permitidos o download das mesmas.
-
+Dentro dos chats será listado as mensagens enviadas, mensagens de texto ficarão disponiveis diretamente e arquivos e fotos enviadas serão permitidos o download das mesmas. Também será disponibilizado um campo para preenchimento de texto e um botão para envio, assim como um botão para anexo de arquivos ou imagens
 
 ### Descrição da estrutura de banco
 
