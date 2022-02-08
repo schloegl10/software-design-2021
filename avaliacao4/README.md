@@ -30,9 +30,18 @@ Durante a criação de novos chats o usuário será apresentado com a seleção 
 Após aplicar filtros definidos, será listado todos os profissionais que se incluem nele. Apartir dessa lista será possivel criar um novo chat com o respectivo profissional.
 Dentro dos chats será listado as mensagens enviadas, mensagens de texto ficarão disponiveis diretamente e arquivos e fotos enviadas serão permitidos o download das mesmas. Também será disponibilizado um campo para preenchimento de texto e um botão para envio, assim como um botão para anexo de arquivos ou imagens
 
-### Descrição da estrutura de banco
+### Segurança de dados
 
-Deverão ser criadas 3 tabelas:
+O programa deve utilizar métodos e ferramentes para garantir que as mensagens trocadas entre profissionais da saúde.
+
+Para isso deve se utilizar o SDL (Security Development Lifecycle, ou Ciclo de Desenvolvimento Seguro, em português) para como padrão de desenvolvimento.
+A comunicação entre o front-end e back-end deve ser feita sempre acompanhada de um cookie que represente um identificador unico do usuário, para se tornar uma camada extra de  proteção de informações.
+O banco de dados e o serviço back-end devem ser estabelecidos no mesmo servidor e o banco ter conexão aberta unicamente para o back-end, de forma a impedir acessos indevidos ao mesmo.
+Senhas devem ser armazenadas como hashMD5 de forma a não correr o risco de vazar a senha do usuário caso ocorra uma falha na segurança
+
+### Banco de dados
+
+Utilizar padrão repository, como referencia o programa pode ter as tabelas:
 
 Profissionais da saúde, conterão: senha, nome, email, especialidade, profissao, local_de_trabalho, endereço
 
