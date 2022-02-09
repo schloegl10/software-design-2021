@@ -13,13 +13,13 @@ O software será composto por uma aplicação web integrada com um banco de dado
 
 ### Descrição
 
-A proposta é criar um sistema de chat entre profissionais de saude.
+A proposta é criar um sistema de chat entre profissionais de saude.\
 A aplicação terá a função de cadastro e de login para cada profissional de saúde. Ao realizar o cadastro os dados serão populados no banco e disponibilizados para que outros especialistas vizualizem e  entrem em contato.
-Após o login o profisional poderá acessar chat ou buscar por um novo profissional de saúde, escolhendo por especialidade, endereço, nome do estabelecimento ou profissional.
+Após o login, o profissional poderá acessar chat ou buscar por um novo profissional de saúde, escolhendo por especialidade, endereço, nome do estabelecimento ou profissional.\
 Após iniciar um chat com um profissional de saúde e enviar mensagens de texto ou imagem, o outro clínico será notificado por email de que um novo chat foi criado.
-Dentro dos chats os profissionais de saúde podem optar por adicionar arquivos, ou enviar mensagens de texto.
-Durante a criação do chat o responsavel pela criação pode determinar por quanto tempo esse chat continuará aberto
-Cada mensagem será limitada a 1000 caracteres e envios de arquivos serão restritos a 10 MB
+Dentro dos chats os profissionais de saúde podem optar por adicionar arquivos, ou enviar mensagens de texto.\
+Durante a criação do chat o responsavel pela criação pode determinar por quanto tempo esse chat continuará aberto, onde cada mensagem será limitada a 1000 caracteres e envios de arquivos serão restritos a 10 MB.
+
 
 ### Interface com o usuário
 
