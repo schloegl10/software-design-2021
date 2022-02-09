@@ -39,6 +39,14 @@ A comunicação entre o front-end e back-end deve ser feita sempre acompanhada d
 O banco de dados e o serviço back-end devem ser estabelecidos no mesmo servidor e o banco ter conexão aberta unicamente para o back-end, de forma a impedir acessos indevidos ao mesmo.
 Senhas devem ser armazenadas como hashMD5 de forma a não correr o risco de vazar a senha do usuário caso ocorra uma falha na segurança
 
+### Estrutura do projeto
+
+O projeto será dividido inicialmente em duas partes, o front-end e back-end:
+
+O front-end será a interface com o usuário que servirá para fazer processamentos simples das operações realizadas pelo usuário e representar graficamente as informações retornadas pelo back-end.
+
+O back-end será uma API que se comunicará com o front-end através de requisições HTTPS e será responsavel pela conexão com o banco de dados e pelos processamentos de informações mais complexos e sensiveis.
+
 ### Banco de dados
 
 Utilizar padrão repository, como referencia o programa pode ter as tabelas:
