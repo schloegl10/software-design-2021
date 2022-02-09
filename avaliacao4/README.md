@@ -23,21 +23,20 @@ Cada mensagem será limitada a 1000 caracteres e envios de arquivos serão restr
 
 ### Interface com o usuário
 
-Ao abrir a aplicação, os usuários irão se deparar com uma tela de login, nessa tela permitirá que eles insiram seus emails e senhas para realizar o login ou optem por criar uma nova conta.
-Na tela de criação de conta eles poderam fornecer seus emails, senha, nome, crm, especialidade, local de trabalho, endereço
-Após realizar o login haverá uma listagem de chats iniciados, ao final da listagem haverá um botão para criação de novos chats
-Durante a criação de novos chats o usuário será apresentado com a seleção de filtros, podendo preencher o filtro de especialidade, endereço, nome do estabelecimento ou nome do trabalhador. 
-Após aplicar filtros definidos, será listado todos os profissionais que se incluem nele. Apartir dessa lista será possivel criar um novo chat com o respectivo profissional.
-Dentro dos chats será listado as mensagens enviadas, mensagens de texto ficarão disponiveis diretamente e arquivos e fotos enviadas serão permitidos o download das mesmas. Também será disponibilizado um campo para preenchimento de texto e um botão para envio, assim como um botão para anexo de arquivos ou imagens
+Ao abrir a aplicação, os usuários irão se deparar com uma tela de login. Nessa tela haverá a orientação para que eles insiram seus emails e senhas para realizar o login ou optem por criar uma nova conta.\  
+Na tela de criação de conta eles poderão fornecer seus emails, senha, nome, CRM, especialidade, local de trabalho e endereço.
+Após realizar o login, haverá uma listagem de chats iniciados, ao final da listagem existirá um botão para a criação de novos chats.\
+Durante a criação de novos chats, o usuário será apresentado à seleção de filtros, podendo preencher o filtro de especialidade, endereço, nome do estabelecimento ou nome do trabalhador. 
+Após aplicar filtros definidos, serão listados todos os profissionais que se incluem neste. A partir dessa lista será possivel criar um novo chat com o respectivo profissional.\
+Dentro dos chats serão listadas as mensagens enviadas. Mensagens de texto ficarão disponíveis diretamente e arquivos e fotos enviadas possuirão seus downloads permitidos. Também será disponibilizado um campo para preenchimento de texto e um botão para envio, assim como um botão para anexo de arquivos ou imagens.
 
 ### Segurança de dados
 
-O programa deve utilizar métodos e ferramentes para garantir que as mensagens trocadas entre profissionais da saúde.
+O programa deve utilizar métodos e ferramentes para garantir que as mensagens trocadas entre profissionais da saúde. Para isso, deve-se utilizar o SDL (Security Development Lifecycle, ou Ciclo de Desenvolvimento Seguro, em português) para como padrão de desenvolvimento\
 
-Para isso deve se utilizar o SDL (Security Development Lifecycle, ou Ciclo de Desenvolvimento Seguro, em português) para como padrão de desenvolvimento.
-A comunicação entre o front-end e back-end deve ser feita sempre acompanhada de um cookie que represente um identificador unico do usuário, para se tornar uma camada extra de  proteção de informações.
-O banco de dados e o serviço back-end devem ser estabelecidos no mesmo servidor e o banco ter conexão aberta unicamente para o back-end, de forma a impedir acessos indevidos ao mesmo.
-Senhas devem ser armazenadas como hashMD5 de forma a não correr o risco de vazar a senha do usuário caso ocorra uma falha na segurança
+A comunicação entre o front-end e back-end deve ser feita sempre acompanhada de um cookie que represente um identificador unico do usuário, para se tornar uma camada extra de  proteção de informações. 
+O banco de dados e o serviço back-end devem ser estabelecidos no mesmo servidor e o banco terá conexão aberta unicamente para o back-end, de forma a impedir acessos indevidos ao mesmo.\
+Senhas devem ser armazenadas como hashMD5 de forma a não correr o risco de vazar a senha do usuário caso ocorra uma falha na segurança.
 
 ### Estrutura do projeto
 
@@ -45,7 +44,7 @@ O projeto será dividido inicialmente em duas partes, o front-end e back-end:
 
 O front-end será a interface com o usuário que servirá para fazer processamentos simples das operações realizadas pelo usuário e representar graficamente as informações retornadas pelo back-end.
 
-O back-end será uma API que se comunicará com o front-end através de requisições HTTPS e será responsavel pela conexão com o banco de dados e pelos processamentos de informações mais complexos e sensiveis.
+O back-end será uma API que se comunicará com o front-end através de requisições HTTPS, além de ser responsável pela conexão com o banco de dados e pelos processamentos de informações mais complexas e sensíveis.
 
 ### Banco de dados
 
