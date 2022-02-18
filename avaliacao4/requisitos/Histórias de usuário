@@ -1,1 +1,63 @@
+# Histórias de Usuário
 
+## 01
+
+Como: Profissional de saude
+
+Eu quero: Realizar meu cadastro na plataforma
+
+Dado: Quero utilizar a plataforma;
+
+Quando: Entrar na aplicação;
+E: Entrar na tela de cadastro;
+E: Fornecer minhas informações de emails, senha, nome, CRM, especialidade, local de trabalho e endereço
+
+Então: Ficar liberado para realizar o login;
+
+## 02
+
+Como: Profissional de saude
+
+Eu quero: Realizar login na plataforma
+
+Dado: Quero utilizar a plataforma;
+
+Quando: Entrar na aplicação;
+E: Entrar na tela de login;
+E: Passar meu email e senha;
+
+Então: Conseguir acessa a minha pagina principal;
+E: Ver minhas conversas;
+E: Entrar em contato com outros médicos;
+
+## 03
+
+Como: Profissional de saude
+
+Eu quero: Enviar mensagens para outros profissionais de saude;
+
+Dado: Necessito de trocar informações médicas com outros profissionais;
+
+Quando: Estiver logado;
+E: Selecionar um médico para enviar mensagens;
+E: Escrever a mensagem ou anexar um arquivo;
+E: Clicar no botão de enviar;
+
+Então: Receber as mensagens que o outro profissional enviar em tempo real;
+
+## 04
+
+Como: Profissional de saude
+
+Eu quero: Poder filtrar profissionais de saude;
+
+Dado: Necessito de ter uma lista de profissionais mais reduzida e focada para eu poder escolher o profissional correto;
+
+Quando: Estiver logado;
+E: Clicar no botão do filtro;
+E: Selecionar uma especialidade;
+E/OU: Selecionar um endereço ou região;
+E/OU: Escrever um nome de um profissional;
+E: Clicar no botão de filtrar;
+
+Então: Os médicos disponiveis para enviar mensagens será apenas dos que corresponderem aos filtros passados;
