@@ -56,7 +56,6 @@ Chats, conterão: profissional_criador, profissional_remetente
 
 Mensagens, conterão: chat, tipo, conteudo, nome_arquivo
 
-## Implementação
+## Requisitos
 
-Consulte o diretório [comunicacao] (./comunicacao), que contém uma implementação
-do algoritmo definido acima
+Consulte o diretório [Requisitos] (./requisitos), que contém as listagens dos requisitos do software
