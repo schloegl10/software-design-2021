@@ -58,4 +58,4 @@ Mensagens, conterão: chat, tipo, conteudo, nome_arquivo
 
 ## Requisitos
 
-Consulte o diretório [Requisitos] (./requisitos), que contém as listagens dos requisitos do software
+Consulte o diretório [requisitos] (./requisitos), que contém as listagens dos requisitos do software
