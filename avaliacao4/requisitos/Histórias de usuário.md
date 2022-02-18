@@ -61,3 +61,34 @@ E/OU: Escrever um nome de um profissional;
 E: Clicar no botão de filtrar;
 
 Então: Os médicos disponiveis para enviar mensagens será apenas dos que corresponderem aos filtros passados;
+
+## 05
+
+Como: Profissional de saude
+
+Eu quero: Poder escolher meu grau de vizibilidade;
+
+Dado: Não quero acabar me sobrecarregando de mensagens ou desejo receber apenas mensagens especificas;
+
+Quando: Estiver logado;
+E: Clicar no botão de vizibilidade;
+E: Selecionar quais especialidades podem me contatar;
+E/OU: Selecionar uma região que pode me contatar;
+E: Clicar no botão de concluir;
+
+Então: Os médicos fora do meu filtro não poderão me visualizar e enviar mensagens;
+
+## 06
+
+Como: Profissional de saude
+
+Eu quero: Finalizar conversas que concluiram seu objetivo;
+
+Dado: Não quero acabar me sobrecarregando de mensagens ou desejo receber apenas mensagens especificas;
+
+Quando: Estiver logado;
+E: Dentro de uma conversa;
+E: Clicar no botão finalizar;
+E: COnfirmar a finalização;
+
+Então: A conversa é apagada;
