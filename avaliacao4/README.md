@@ -64,6 +64,10 @@ Para a comunicação entre profissionais da saúde será utilizado o Matrix.org,
 
 ![Flowchart.png](./Flowchart.png)
 
+
+### Diagrama de Contexto
+
+![Diagrama de Contexto.drawio.pdf](./diagrama-contexto/Diagrama de Contexto.drawio.pdf)
 ## Requisitos
 
 Consulte o diretório [requisitos], que contém as listagens dos requisitos do software
