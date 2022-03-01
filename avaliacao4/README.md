@@ -66,4 +66,4 @@ Para a comunicação entre profissionais da saúde será utilizado o Matrix.org,
 
 ## Requisitos
 
-Consulte o diretório [requisitos], que contém as listagens dos requisitos do software
+Consulte o diretório ![requisitos](./requisitos), que contém as listagens dos requisitos do software
