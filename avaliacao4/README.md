@@ -56,6 +56,10 @@ Chats, conterão: profissional_criador, profissional_remetente
 
 Mensagens, conterão: chat, tipo, conteudo, nome_arquivo
 
+### Sistema de comunicação entre Partes
+
+Para a comunicação entre profissionais da saúde será utilizado o Matrix.org, para poder utilizar um sistema já pronto e simplificar a estratégia de mensagens em tempo real
+
 ## Requisitos
 
 Consulte o diretório [requisitos], que contém as listagens dos requisitos do software
