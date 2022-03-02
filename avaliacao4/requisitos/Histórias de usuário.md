@@ -92,3 +92,33 @@ E: Clicar no botão finalizar;
 E: COnfirmar a finalização;
 
 Então: A conversa é apagada;
+
+## 07
+
+Como: Administrador 
+
+Eu quero: Permitir o cadastro de novos profissionais;
+
+Dado: O sistema estiver em funcionamento normal, profissionais de saúde podem se cadastrar no mesmo;
+
+Quando: Um profissional se cadastrar;
+E: Dentro do sistema;
+E: Informando todos os dados de forma correta;
+E: Confirmar o cadastro;
+
+Então: O cadastro deve ser feito, salvando todas as informações;
+
+## 08
+
+Como: Administrador 
+
+Eu quero: Deletar profissionais de saúde que foram desligados do serviço;
+
+Dado: Um determinado funcionário previamente cadastrado no sistema, não faz mais parte daquele nicho;
+
+Quando: Eu quiser retirar o devido trabalhador;
+E: Dentro do sistema;
+E: Escolhendo corretamente o profissional;
+E: Confirmar a exclusão do mesmo;
+
+Então: O usuário deve ser deletado, retirando todas as informações do sistema sobre aquele profissional;
