@@ -84,7 +84,7 @@ Consulte o diretório [diagrama de contexto](../avaliacao4/diagrama-contexto)
 
 ### Diagrama de Arquitetura
 
-![Flowchart.png](./Diagrama de Arquitetura.png)
+![Flowchart.png](./DiagramaDeArquitetura.png)
 
 
 ## Requisitos
