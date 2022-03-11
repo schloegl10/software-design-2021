@@ -58,7 +58,15 @@ Mensagens, conterão: chat, tipo, conteudo, nome_arquivo
 
 ### Sistema de comunicação entre Partes
 
-Para a comunicação entre profissionais da saúde será utilizado o Matrix.org, para poder utilizar um sistema já pronto e simplificar a estratégia de mensagens em tempo real
+Para a comunicação entre profissionais da saúde será utilizado a arquitetura [Matrix.org](https://matrix.org/), para o estabelecimento de mensagens em tempo real.
+
+A implementação da arquitetura Matrix.org se dará em 3 partes, client, homeserver e Identity server.
+
+O [client](https://spec.matrix.org/v1.2/client-server-api/) será a parte que será executada no usuário e terá como papel enviar as requisições de registro, mensagem, solicitação de inicio de conversas, etc. para o homeserver. Será parte do javascript da aplicação Web, e utilizará o [Matrix.org JS SDK](https://matrix.org/sdks/#matrix-org-js-sdk), para a criação e implementação da arquitetura.
+
+O [homeserver](https://spec.matrix.org/v1.2/server-server-api/), é a parte do Matrix.org responsavel pela comunicação, recebendo requisições do client e enviando para outros homeservers. Para sua implementação será utilizado uma implementação do homeserver [Synapse](https://github.com/matrix-org/synapse/)
+
+O [Identity Server](https://spec.matrix.org/v1.2/identity-service-api/), será responsavel por forncer identidades de outros usuários e prover a localização de comunicação para com eles. Essa parte integrará as conexões do Matrix.org com os dados do banco, determinando qual médico representa o respectivo homeserver e iniciando corretamente as comunicações.
 
 ### Diagrama de Contexto
 
