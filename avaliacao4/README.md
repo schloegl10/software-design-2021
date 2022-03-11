@@ -80,11 +80,11 @@ A estrutura do matrix permite que cada aplicação comunique independentemente c
 
 ### Diagrama de Contexto
 
-Consulte o diretório [diagrama de contexto](../avaliacao4/diagrama-contexto)
+Consulte o diretório ![DiagramaDeContexto.png](./DiagramaDeContexto.png)
 
 ### Diagrama de Arquitetura
 
-![Flowchart.png](./DiagramaDeArquitetura.png)
+![DiagramaDeArquitetura.png](./DiagramaDeArquitetura.png)
 
 
 ## Requisitos
