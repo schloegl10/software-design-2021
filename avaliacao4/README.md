@@ -60,13 +60,14 @@ Mensagens, conterão: chat, tipo, conteudo, nome_arquivo
 
 Para a comunicação entre profissionais da saúde será utilizado o Matrix.org, para poder utilizar um sistema já pronto e simplificar a estratégia de mensagens em tempo real
 
+### Diagrama de Contexto
+
+Consulte o diretório [diagrama de contexto](../avaliacao4/diagrama-contexto)
+
 ### Diagrama de Arquitetura
 
 ![Flowchart.png](./Flowchart.png)
 
-### Diagrama de Contexto
-
-Consulte o diretório [diagrama de contexto](../avaliacao4/diagrama-contexto)
 
 ## Requisitos
 
