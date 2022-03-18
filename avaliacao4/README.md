@@ -37,22 +37,12 @@ Dentro dos chats serão listadas as mensagens enviadas. Mensagens de texto ficar
 
 ### Segurança de dados
 
-O programa deve utilizar métodos e ferramentes para garantir que as mensagens trocadas entre profissionais da saúde. Para isso, deve-se utilizar o SDL (Security Development Lifecycle, ou Ciclo de Desenvolvimento Seguro, em português) para como padrão de desenvolvimento
+Devido a informações sensiveis que serão enviadas e armazenadas na aplicação é necessário ter medidas de contenção para evitar que ocorra vazamentos ou ataques. Dessa forma o programa deve utilizar métodos e ferramentes para garantir que as mensagens trocadas entre profissionais da saúde. Para isso, deve-se utilizar o SDL (Security Development Lifecycle, ou Ciclo de Desenvolvimento Seguro, em português) para como padrão de desenvolvimento
 
 A comunicação entre aplicação local e servidor principal deve ser feita feita utilizando criptografia e cookies de segurança para confirmar origem das mensagens. 
 
 O banco de dados e o serviço back-end devem ser estabelecidos no mesmo servidor e o banco terá conexão aberta unicamente para o back-end, de forma a impedir acessos indevidos ao mesmo.
 Senhas devem ser armazenadas como hashMD5 de forma a não correr o risco de vazar a senha do usuário caso ocorra uma falha na segurança.
-
-### Estrutura do projeto
-
-O projeto será dividido em 3 partes: aplicação(Redes de Comunicação), homeserver e servidor principal:
-
-A aplicação(Redes de Comunicação) irá englobar comunicação com o servidor principal, para obtenção de informações do banco de dados e validações, interface e client API da arquitetura Matrix.org, para comunicação com o homeserver.
-
-O Homeserver será um serviço executada em conjunto com a aplicação(Redes de Comunicação), e consistirá na forma como as conexões entre médicos em tempo real irá ser estabelecida, cada Homeserver irá poder se comunicar com o servidor principal, a aplicação que executa no mesmo computador e outros homeserver.
-
-O servidor principal será a parte que ficará responsavel para comunicar com o banco de dados e receber requisições das aplicações. Ele será hospedado em um servidor gerenciado pelo Rede de Comunicações
 
 ### Banco de dados
 
@@ -72,11 +62,13 @@ A implementação da arquitetura Matrix.org se dará em 3 partes, client, homese
 
 O [client](https://spec.matrix.org/v1.2/client-server-api/) será a parte que será executada no usuário e terá como papel enviar as requisições de registro, mensagem, solicitação de inicio de conversas, etc. para o homeserver. Será executata em cada um dos usuários. E irá consistir na integração da aplicação Redes de comunicação com os homeservers responsaveis pela comunicação e o Identity Server
 
-O [homeserver](https://spec.matrix.org/v1.2/server-server-api/), é a parte do Matrix.org responsavel pela comunicação, recebendo requisições do client e enviando para outros homeservers. Para sua implementação será utilizado uma implementação do homeserver [Synapse](https://github.com/matrix-org/synapse/). Ela será executada em cada um dos usuários.
+O [homeserver](https://spec.matrix.org/v1.2/server-server-api/), é a parte do Matrix.org responsavel pela comunicação, recebendo requisições do client e enviando para outros homeservers. Para sua implementação será utilizado uma implementação do homeserver [Synapse](https://github.com/matrix-org/synapse/) devido a grande complexidade de implementar do zero uma aplicação homeserver, será utilizada essa implementação do Synapse. Ela será executada em cada um dos usuários.
 
 O [Identity Server](https://spec.matrix.org/v1.2/identity-service-api/), será responsavel por forncer identidades de outros usuários e prover a localização de comunicação para com eles. Essa parte integrará as conexões do Matrix.org com os dados do banco, determinando qual médico representa o respectivo homeserver e iniciando corretamente as comunicações. Ela será uma aplicação unica executada em um servidor da redes de comunicação.
 
 A estrutura do matrix permite que cada aplicação comunique independentemente com outras, reduzindo o trafego para apenas receber mensagens ou enviar mensagens para pessoas que com quem tem conversas.
+
+O armazenamento das mensagens será responsavel pelos homeservers e ocasionamente enviados para realizar backup no servidor principal. Os dados de cadastro serão armazenados no servidor principal e será usado para determinar qual homeserver será utilizado para contatar determinado médico
 
 ### Diagrama de Contexto
 
@@ -86,6 +78,15 @@ Consulte o diretório ![DiagramaDeContexto.png](./DiagramaDeContexto.png)
 
 ![DiagramaDeArquitetura.png](./DiagramaDeArquitetura.png)
 
+### Estrutura do projeto
+
+O projeto será dividido em 3 partes: aplicação(Redes de Comunicação), homeserver e servidor principal:
+
+A aplicação(Redes de Comunicação) irá englobar comunicação com o servidor principal, para obtenção de informações do banco de dados e validações, interface e client API da arquitetura Matrix.org, para comunicação com o homeserver.
+
+O Homeserver será um serviço executada em conjunto com a aplicação(Redes de Comunicação), e consistirá na forma como as conexões entre médicos em tempo real irá ser estabelecida, cada Homeserver irá poder se comunicar com o servidor principal, a aplicação que executa no mesmo computador e outros homeserver.
+
+O servidor principal será a parte que ficará responsavel para comunicar com o banco de dados e receber requisições das aplicações. Ele será hospedado em um servidor gerenciado pelo Rede de Comunicações
 
 ## Requisitos
 
