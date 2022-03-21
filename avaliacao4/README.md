@@ -36,7 +36,7 @@ Na tela de criação de conta eles poderão fornecer seus emails, senha, nome, C
 
 Após realizar o login, haverá uma listagem de chats iniciados, ao final da listagem existirá um botão para a criação de novos chats.
 
-![tela inicial.jpeg](./interface/tela inicial.jpeg)
+![telainicial.jpeg](./interface/telainicial.jpeg)
 
 Durante a criação de novos chats, o usuário será apresentado à seleção de filtros, podendo preencher o filtro de especialidade, endereço, nome do estabelecimento ou nome do trabalhador. Após aplicar filtros definidos, serão listados todos os profissionais que se incluem neste. A partir dessa lista será possivel criar um novo chat com o respectivo profissional.
 
