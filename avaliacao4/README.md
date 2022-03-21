@@ -31,12 +31,20 @@ Ao abrir a aplicação, os usuários irão se deparar com uma tela de login. Nes
 ![login.jpeg](./interface/login.jpeg)
 
 Na tela de criação de conta eles poderão fornecer seus emails, senha, nome, CRM, especialidade, local de trabalho e endereço.
+
+![singin.jpeg](./interface/singin.jpeg)
+
 Após realizar o login, haverá uma listagem de chats iniciados, ao final da listagem existirá um botão para a criação de novos chats.
 
-Durante a criação de novos chats, o usuário será apresentado à seleção de filtros, podendo preencher o filtro de especialidade, endereço, nome do estabelecimento ou nome do trabalhador. 
-Após aplicar filtros definidos, serão listados todos os profissionais que se incluem neste. A partir dessa lista será possivel criar um novo chat com o respectivo profissional.
+![tela inicial.jpeg](./interface/tela inicial.jpeg)
+
+Durante a criação de novos chats, o usuário será apresentado à seleção de filtros, podendo preencher o filtro de especialidade, endereço, nome do estabelecimento ou nome do trabalhador. Após aplicar filtros definidos, serão listados todos os profissionais que se incluem neste. A partir dessa lista será possivel criar um novo chat com o respectivo profissional.
+
+![filtro.jpeg](./interface/filtro.jpeg)
 
 Dentro dos chats serão listadas as mensagens enviadas. Mensagens de texto ficarão disponíveis diretamente e arquivos e fotos enviadas possuirão seus downloads permitidos. Também será disponibilizado um campo para preenchimento de texto e um botão para envio, assim como um botão para anexo de arquivos ou imagens.
+
+![chat.jpeg](./interface/chat.jpeg)
 
 ### Segurança de dados
 
