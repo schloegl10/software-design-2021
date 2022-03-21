@@ -77,19 +77,9 @@ Mensagens, conterão: chat, tipo, conteudo, nome_arquivo
 
 ### Sistema de comunicação entre Partes
 
-Com intuito de circunvir a sobrecarga de um servidor unico com a implementação de mensagens em tempo real, será buscado utilizar uma lógica de divisão de tráfego e comunicação descentralizada, utilizando a arquitetura [Matrix.org](https://matrix.org/), para o estabelecimento de mensagens em tempo real.
+Será utilizado o AWS Chime para a comunicação entre partes. Com intuito de circunvir a sobrecarga de um servidor unico com a implementação de mensagens em tempo real, redução de partes que possam necessitar de manutenção, facilidade de construção e possibilitar que o programa seja executado em navegadores ou como API por outras aplicações.
 
-A implementação da arquitetura Matrix.org se dará em 3 partes, client, homeserver e Identity server.
-
-O [client](https://spec.matrix.org/v1.2/client-server-api/) será a parte que será executada no usuário e terá como papel enviar as requisições de registro, mensagem, solicitação de inicio de conversas, etc. para o homeserver. Será executata em cada um dos usuários. E irá consistir na integração da aplicação Redes de comunicação com os homeservers responsaveis pela comunicação e o Identity Server
-
-O [homeserver](https://spec.matrix.org/v1.2/server-server-api/), é a parte do Matrix.org responsavel pela comunicação, recebendo requisições do client e enviando para outros homeservers. Para sua implementação será utilizado uma implementação do homeserver [Synapse](https://github.com/matrix-org/synapse/) devido a grande complexidade de implementar do zero uma aplicação homeserver, será utilizada essa implementação do Synapse. Ela será executada em cada um dos usuários.
-
-O [Identity Server](https://spec.matrix.org/v1.2/identity-service-api/), será responsavel por forncer identidades de outros usuários e prover a localização de comunicação para com eles. Essa parte integrará as conexões do Matrix.org com os dados do banco, determinando qual médico representa o respectivo homeserver e iniciando corretamente as comunicações. Ela será uma aplicação unica executada em um servidor da redes de comunicação.
-
-A estrutura do matrix permite que cada aplicação comunique independentemente com outras, reduzindo o trafego para apenas receber mensagens ou enviar mensagens para pessoas que com quem tem conversas.
-
-O armazenamento das mensagens será responsavel pelos homeservers e ocasionamente enviados para realizar backup no servidor principal. Os dados de cadastro serão armazenados no servidor principal e será usado para determinar qual homeserver será utilizado para contatar determinado médico
+A implementação se dará com a utilização dos padrões do AWS Chime e sua SDK
 
 ### Diagrama de Contexto
 
@@ -101,13 +91,15 @@ Consulte o diretório ![DiagramaDeContexto.png](./DiagramaDeContexto.png)
 
 ### Estrutura do projeto
 
-O projeto será dividido em 3 partes: aplicação(Redes de Comunicação), homeserver e servidor principal:
+O projeto poderá ser utilizado de duas formas, cada uma com sua estrutura, sendo elas:
 
-A aplicação(Redes de Comunicação) irá englobar comunicação com o servidor principal, para obtenção de informações do banco de dados e validações, interface e client API da arquitetura Matrix.org, para comunicação com o homeserver.
+A execução Web, onde será desenvolvido uma aplicação web que irá ter acesso ao AWS Chime via SDK, e ao servidor do Redes de comunicação. Permitindo os usuários de utilizarem diretamente a aplicação. O front end irá acessar o AWS Chime e o servidor via requisições.
 
-O Homeserver será um serviço executada em conjunto com a aplicação(Redes de Comunicação), e consistirá na forma como as conexões entre médicos em tempo real irá ser estabelecida, cada Homeserver irá poder se comunicar com o servidor principal, a aplicação que executa no mesmo computador e outros homeserver.
+A execução em outras aplicações, para poder fornecer facilidade de acesso a aplicação, será criada um API client que irá se comunicar com o servidor e com o AWS Chime
 
-O servidor principal será a parte que ficará responsavel para comunicar com o banco de dados e receber requisições das aplicações. Ele será hospedado em um servidor gerenciado pelo Rede de Comunicações
+Além dessas partes terá o servidor principal que manterá acesso ao banco de dados e irá fornecer acesso a listagem de médicos para os usuários e permitirá o mapeamento entre identificações do AWS e dados de cadastro no banco.
+
+A ultima estrutura será o AWS Chime que será acionado via SDK
 
 ## Requisitos
 
