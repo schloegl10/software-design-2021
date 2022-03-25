@@ -79,6 +79,8 @@ Mensagens, conterão: chat, tipo, conteudo, nome_arquivo
 
 Será utilizado o AWS Chime para a comunicação entre partes. Com intuito de circunvir a sobrecarga de um servidor unico com a implementação de mensagens em tempo real, redução de partes que possam necessitar de manutenção, facilidade de construção e possibilitar que o programa seja executado em navegadores ou como API por outras aplicações.
 
+Entre os serviços propostos pelo AWS Chime, pode-se citar a realização de chats, chamadas de vídeo, compartilhamento de tela e agendamentos de reuniões. Além disso, o serviço possui uma política de preços bem flexível. O pagamento ocorre conforme o uso, sem taxas adiantadas. Os desenvolvedores que implementarem o SDK podem optar por implementar as funcionalidades que forem desejadas no projeto.
+
 A implementação se dará com a utilização dos padrões do AWS Chime e sua SDK
 
 ### Diagrama de Contexto
