@@ -114,12 +114,19 @@ A segunda parte é a aplicação Redes de Comunicação, ela será a aplicação
 O terceira parte é o banco de dados, será um banco de dados relacional e terá como função armazenar os dados dos profissionais da saude. Será acessado unicamente pela aplicação
 
 A quarta parte é o front-end, sendo esse dividido em duas formas:
+
  - A primeira será o front-end do site redes de comunicação, que será a interface descrita a cima e será a forma basica de acessar a aplicação. Terá como papel receber os comandos do usuário e retornar uma interface visual e as informações necessárias.
  - A segunda será um plugin javascript que poderá ser adicionado em outras aplicações web e permitirá integrar uma interface do redes de comunicação ou fornecer uma integração entre o front-end de outras aplicações, o AWS Chime e a aplicação Redes de Comunicação
 
 ### Escalabilidade do Projeto
 
+A escalabilidade é a forma de permitir que outras aplicações tenham acesso as funcionalidades do Redes de Comunicação e permitir uma facil integração com elas. 
 
+A escalabilidade do projeto será feita apartir de um plugin javascript. Será criado um plugin javascript com os códigos similares ao front-end normal da aplicação, ele terá duas formas de operação
+
+A primeira forma irá renderizar uma janela com interface similar a interface normal. Ela terá de ser capaz de ser redimensionada para os tamanhos delimitados pelo individuo que estará implementando o plugin na sua aplicação. Essa forma do plugin irá permitir requisições ao AWS Chime e a aplicação Redes de Comunicação, funcionando de forma a replicar a pagina web do Redes de Comunicação como uma janela de outra aplicação web.
+
+A segunda forma é um segundo plugin que irá funcionar como um client para a aplicação Redes de Comunicação, recebendo entradas especificas nos métodos e retornando o conteudo como mensagens e chats abertos do profissional. O intuito desse plugin é permitir que a implementação do Redes de Comunicação seja feita utilizando uma interface de autoria de terceiros, de forma a integrar melhor com os seus sistemas.
 
 ## Requisitos
 
