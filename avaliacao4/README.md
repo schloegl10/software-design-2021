@@ -97,7 +97,7 @@ Para que sejam listados as mensagens da conversa basta a aplicação Web enviar 
 
 ### Diagrama de Contexto
 
-Consulte o diretório ![DiagramaDeContexto.png](./DiagramaDeContexto.png)
+![DiagramaDeContexto.png](./DiagramaDeContexto.png)
 
 ### Diagrama de Arquitetura
 
@@ -116,6 +116,10 @@ O terceira parte é o banco de dados, será um banco de dados relacional e terá
 A quarta parte é o front-end, sendo esse dividido em duas formas:
  - A primeira será o front-end do site redes de comunicação, que será a interface descrita a cima e será a forma basica de acessar a aplicação. Terá como papel receber os comandos do usuário e retornar uma interface visual e as informações necessárias.
  - A segunda será um plugin javascript que poderá ser adicionado em outras aplicações web e permitirá integrar uma interface do redes de comunicação ou fornecer uma integração entre o front-end de outras aplicações, o AWS Chime e a aplicação Redes de Comunicação
+
+### Escalabilidade do Projeto
+
+
 
 ## Requisitos
 
