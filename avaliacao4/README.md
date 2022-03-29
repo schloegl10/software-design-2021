@@ -79,13 +79,13 @@ Mensagens, conterão: chat, tipo, conteudo, nome_arquivo
 
 Será utilizado o AWS Chime para a comunicação entre partes. Com intuito de circunvir a sobrecarga de um servidor unico com a implementação de mensagens em tempo real, redução de partes que possam necessitar de manutenção, facilidade de construção e possibilitar que o programa seja executado em navegadores ou como API por outras aplicações. Apesar da implicação de custos ao uso do AWS Chime, a escolha de utilizar essa funcionalidade se deve a redução de complexidade da aplicação ao não necessitar de focar esforços na criação integral de uma comunicação em tempo real.
 
-Entre os serviços propostos pelo AWS Chime, pode-se citar a realização de chats, chamadas de vídeo, compartilhamento de tela e agendamentos de reuniões. Além disso, o serviço possui uma política de preços bem flexível. O pagamento ocorre conforme o uso, sem taxas adiantadas. Os desenvolvedores que implementarem o SDK podem optar por implementar as funcionalidades que forem desejadas no projeto, no caso do Redes de Computação será utilizado a troca de mensagens e arquivos.
+Entre os serviços propostos pelo AWS Chime, pode-se citar a realização de chats, chamadas de vídeo, compartilhamento de tela e agendamentos de reuniões. Além disso, o serviço possui uma política de preços bem flexível. O pagamento ocorre conforme o uso, sem taxas adiantadas. Os desenvolvedores que implementarem o SDK podem optar por implementar as funcionalidades que forem desejadas no projeto, no caso do Redes de Comunicação será utilizado a troca de mensagens e arquivos.
 
 #### Explicação da implementação e funcionalidade do AWS Chime
 
-A integração do sistema redes de computação com o AWS Chime se dará atráves da utilização de ferramentas e modelos disponibilizados pela Amazon para a implementação. O SDK possibilita uma aplicação Web se comunicar com os servidores da AWS, realizando requisições através do javascript.
+A integração do sistema Redes de Comunicação com o AWS Chime se dará atráves da utilização de ferramentas e modelos disponibilizados pela Amazon para a implementação. O SDK possibilita uma aplicação Web se comunicar com os servidores da AWS, realizando requisições através do javascript.
 
-O AWS Chime permite também a integração de identificadores criados pela propria aplicação de servirem como a identificação dentro do AWS, permitindo integrar a funcionalidade de envio e recebimento de mensagens a uma entidade de profissionais da saude. Para isso basta utilizar AppInstanceUser, e determinar o id do AppInstanceUser (nomenclatura do AWS Chime para usuários da funcionalidade, contém um id de identificação e apartir disso pode realizar as funções disponiveis do AWS Chime) de um profissional da saude como o mesmo id da entidade profissional da saude no banco da aplicação redes de computação. A criação do AppInstanceUser ocorrerá em conjunto com o cadastro de um profissional da saude. Sua integração com a entidade do banco de dados permitirá que ao realizar o filtro de um profissional da saude na tela de filtro, possa consultar o banco de dados pelas informações de contato do AppInstanceUser gravados na entidade profissional da saude pesquisada e retornar para a aplicação web para a criação de chats e envio de mensagens. Essa informação também permitirá que ao realizar um login a aplicação web possa obter via requisições os chats ao qual participa e as mensagens dos chats.
+O AWS Chime permite também a integração de identificadores criados pela propria aplicação de servirem como a identificação dentro do AWS, permitindo integrar a funcionalidade de envio e recebimento de mensagens a uma entidade de profissionais da saude. Para isso basta utilizar AppInstanceUser, e determinar o id do AppInstanceUser (nomenclatura do AWS Chime para usuários da funcionalidade, contém um id de identificação e apartir disso pode realizar as funções disponiveis do AWS Chime) de um profissional da saude como o mesmo id da entidade profissional da saude no banco da aplicação Redes de Comunicação. A criação do AppInstanceUser ocorrerá em conjunto com o cadastro de um profissional da saude. Sua integração com a entidade do banco de dados permitirá que ao realizar o filtro de um profissional da saude na tela de filtro, possa consultar o banco de dados pelas informações de contato do AppInstanceUser gravados na entidade profissional da saude pesquisada e retornar para a aplicação web para a criação de chats e envio de mensagens. Essa informação também permitirá que ao realizar um login a aplicação web possa obter via requisições os chats ao qual participa e as mensagens dos chats.
 
 Para que ocorra a comunicação entre dois profissionais da saude, ele necessita de criar um canal através de uma requisição que será feita pela aplicação web, seguindo os parametros de mensagem de criação de canal do AWS e passar o outro profissional como o outro membro do canal. Para o intuito da aplicação todos canais serão privados, para impedir acesso de terceiros as mensagens ou a visualizar o canal.
 
@@ -105,15 +105,17 @@ Consulte o diretório ![DiagramaDeContexto.png](./DiagramaDeContexto.png)
 
 ### Estrutura do projeto
 
-O projeto poderá ser utilizado de duas formas, cada uma com sua estrutura, sendo elas:
+O projeto será dividido em 4 partes:
 
-A execução Web, onde será desenvolvido uma aplicação web que irá ter acesso ao AWS Chime via SDK, e ao servidor do Redes de comunicação. Permitindo os usuários de utilizarem diretamente a aplicação. O front end irá acessar o AWS Chime e o servidor via requisições.
+A primeira parte é o AWS Chime que tem como papel realizar a comunicação em tempo real dos profissionais da saude. Ela será acessada pelo front-end e pela aplicação do Redes de comunicação.
 
-A execução em outras aplicações, para poder fornecer facilidade de acesso a aplicação, será criada um API client que irá se comunicar com o servidor e com o AWS Chime
+A segunda parte é a aplicação Redes de Comunicação, ela será a aplicação principal e será hospedada em um servidor de responsabilidade da Redes de Comunicação. Ele terá o papel de realizar a conexão com o banco de dados, fornecer uma relação dos dados dos profissionais da saúde e seus usuários do AWS Chime, realizar validação de login e transcrever a listagem de chats de um usuário para a lista de profissionais que ele tem conversas. A aplicação receberá requisições do front-end e irá realizar requisições ao AWS Chime.
 
-Além dessas partes terá o servidor principal que manterá acesso ao banco de dados e irá fornecer acesso a listagem de médicos para os usuários e permitirá o mapeamento entre identificações do AWS e dados de cadastro no banco.
+O terceira parte é o banco de dados, será um banco de dados relacional e terá como função armazenar os dados dos profissionais da saude. Será acessado unicamente pela aplicação
 
-A ultima estrutura será o AWS Chime que será acionado via SDK
+A quarta parte é o front-end, sendo esse dividido em duas formas:
+ - A primeira será o front-end do site redes de comunicação, que será a interface descrita a cima e será a forma basica de acessar a aplicação. Terá como papel receber os comandos do usuário e retornar uma interface visual e as informações necessárias.
+ - A segunda será um plugin javascript que poderá ser adicionado em outras aplicações web e permitirá integrar uma interface do redes de comunicação ou fornecer uma integração entre o front-end de outras aplicações, o AWS Chime e a aplicação Redes de Comunicação
 
 ## Requisitos
 
