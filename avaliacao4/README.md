@@ -97,7 +97,7 @@ Para que sejam listados as mensagens da conversa basta a aplicação Web enviar 
 
 ### Diagrama de Contexto
 
-![DiagramaDeContexto.png](./DiagramaDeContexto.png)
+![DiagramaDeContexto.png](./DiagramaContexto.png)
 
 ### Diagrama de Arquitetura
 
