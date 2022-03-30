@@ -101,7 +101,7 @@ Para que sejam listados as mensagens da conversa basta a aplicação Web enviar 
 
 ### Diagrama de Arquitetura
 
-![DiagramaDeArquitetura.png](./DiagramaDeArquitetura.png)
+![DiagramaDeArquitetura.png](./DiagramaArquitetura.png)
 
 ### Estrutura do projeto
 
